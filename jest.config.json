@@ -1,0 +1,13 @@
+{
+  "testEnvironment": "node",
+  "testMatch": ["<rootDir>/tests/**/*.spec.[tj]s?(x)"],
+  "transform": {
+    "^.+\\.(t|j)sx?$": "@swc/jest"
+  },
+  "moduleNameMapper": {
+    "^@/(.*)$": "<rootDir>/lib/$1"
+  },
+  "clearMocks": true,
+  "collectCoverage": true,
+  "coverageDirectory": "<rootDir>/coverage"
+}

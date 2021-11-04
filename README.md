@@ -1,0 +1,3 @@
+# @coinset/gmocoin
+
+WIP
