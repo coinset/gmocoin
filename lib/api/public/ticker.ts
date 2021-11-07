@@ -47,9 +47,10 @@ const fetchTicker: PublicAPI<TickerOptions, TickerResponse> = (
 ) => {
   const url = new URL(join(TICKER), BASE_URL)
 
-  url.search = new URLSearchParams({
-    symbol: symbol === 'ALL' ? '' : symbol ?? ''
-  }).toString()
+  if (typeof symbol === 'string') {
+    url.searchParams.set('symbol', symbol === 'ALL' ? '' : symbol)
+  }
+
   return jsonFetch(url, init, {
     parseJson: reviver
   })

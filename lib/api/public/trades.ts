@@ -42,16 +42,21 @@ const reviver = defineReviver((key, value) => {
  * @beta
  */
 const fetchTrades: PublicAPI<TradesOptions, TradesResponse> = (
-  { symbol, page = 1, count = 100 },
+  { symbol, page, count },
   init
 ) => {
   const url = new URL(TRADES, BASE_URL)
 
-  url.search = new URLSearchParams({
-    symbol,
-    page: String(page),
-    count: String(count)
-  }).toString()
+  url.searchParams.set('symbol', symbol)
+
+  if (typeof page === 'number') {
+    url.searchParams.set('page', String(page))
+  }
+
+  if (typeof count === 'number') {
+    url.searchParams.set('count', String(count))
+  }
+
   return jsonFetch(url, init, {
     parseJson: reviver
   })

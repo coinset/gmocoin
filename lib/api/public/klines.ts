@@ -63,11 +63,9 @@ const fetchKlines: PublicAPI<KlineOptions, KlineResponse> = (
 ) => {
   const url = new URL(KLINES, BASE_URL)
 
-  url.search = new URLSearchParams({
-    symbol,
-    interval,
-    date
-  }).toString()
+  url.searchParams.set('symbol', symbol)
+  url.searchParams.set('interval', interval)
+  url.searchParams.set('date', date)
 
   return jsonFetch(url, init, {
     parseJson: reviver

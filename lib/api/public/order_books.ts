@@ -26,7 +26,7 @@ type OrderBooksResponse = Response<OrderBooksData>
 
 const reviver = defineReviver((key, value) => {
   if (['price', 'size'].includes(key) && typeof value === 'string') {
-    return parseFloat(value)
+    return Number(value)
   }
 
   return value
@@ -44,9 +44,8 @@ const fetchOrderBooks: PublicAPI<OrderBooksOptions, OrderBooksResponse> = (
 ) => {
   const url = new URL(join(ORDERBOOKS), BASE_URL)
 
-  url.search = new URLSearchParams({
-    symbol
-  }).toString()
+  url.searchParams.set('symbol', symbol)
+
   return jsonFetch(url, init, {
     parseJson: reviver
   })
