@@ -9,5 +9,6 @@
   },
   "clearMocks": true,
   "collectCoverage": true,
-  "coverageDirectory": "<rootDir>/coverage"
+  "coverageDirectory": "<rootDir>/coverage",
+  "setupFilesAfterEnv": ["jest-extended/all"]
 }
