@@ -10,7 +10,8 @@ const ALL_GMOCOIN_SPOT_PAIRS: GMOCoinSpotPair[] = [
   'LTC',
   'XEM',
   'XRP',
-  'XYM'
+  'XYM',
+  'XLM'
 ]
 
 const ALL_GMOCOIN_MARGIN_PAIRS: GMOCoinMarginPair[] = [
@@ -18,10 +19,7 @@ const ALL_GMOCOIN_MARGIN_PAIRS: GMOCoinMarginPair[] = [
   'BCH_JPY',
   'ETH_JPY',
   'LTC_JPY',
-  'XEM_JPY',
-  'XLM_JPY',
-  'XRP_JPY',
-  'XYM_JPY'
+  'XRP_JPY'
 ]
 
 export { ALL_GMOCOIN_SPOT_PAIRS, ALL_GMOCOIN_MARGIN_PAIRS }

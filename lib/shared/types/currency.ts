@@ -1,26 +1,23 @@
 import type { StrictExtract } from '@/utils/types'
 import type {
-  All_Pairs,
   BTC,
   ETH,
   BCH,
   LTC,
   XRP,
   XEM,
-  XYM
+  XLM,
+  XYM,
+  Pair,
+  JPY
 } from 'cryptocurrency-types'
 
-type GMOCoinSpotPair = BTC | ETH | BCH | LTC | XRP | XEM | XYM
-type GMOCoinMarginPair = StrictExtract<
-  All_Pairs,
-  | 'BTC_JPY'
-  | 'ETH_JPY'
-  | 'BCH_JPY'
-  | 'LTC_JPY'
-  | 'XRP_JPY'
-  | 'XEM_JPY'
-  | 'XLM_JPY'
-  | 'XYM_JPY'
+type GMOCoinSymbol = BTC | ETH | BCH | LTC | XRP | XEM | XLM | XYM
+
+type GMOCoinSpotPair = GMOCoinSymbol
+type GMOCoinMarginPair = Pair<
+  StrictExtract<GMOCoinSymbol, BTC | ETH | BCH | LTC | XRP>,
+  JPY
 >
 type GMOCoinPair = GMOCoinSpotPair | GMOCoinMarginPair
 export type { GMOCoinPair, GMOCoinSpotPair, GMOCoinMarginPair }

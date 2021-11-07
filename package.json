@@ -31,7 +31,7 @@
   "sideEffects": false,
   "license": "MIT",
   "dependencies": {
-    "cryptocurrency-types": "^1.0.0-beta.6",
+    "cryptocurrency-types": "^1.0.0-beta.11",
     "node-fetch": "^2.6.6"
   },
   "devDependencies": {
