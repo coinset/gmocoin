@@ -1,3 +1,5 @@
 # @coinset/gmocoin
 
-WIP
+Universal GMO Coin API client
+
+:children_crossing: This is not official
